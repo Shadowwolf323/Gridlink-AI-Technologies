@@ -2,29 +2,14 @@ from datetime import datetime
 from extensions import db
 
 
-class Transaction(db.Model):
-    __tablename__ = "transactions"
+class EnergyListing(db.Model):
+    __tablename__ = "energy_listings"
 
-    id = db.Column(
-        db.Integer,
-        primary_key=True
-    )
-
-    buyer_id = db.Column(
-        db.Integer,
-        db.ForeignKey("users.id"),
-        nullable=False
-    )
+    id = db.Column(db.Integer, primary_key=True)
 
     seller_id = db.Column(
         db.Integer,
         db.ForeignKey("users.id"),
-        nullable=False
-    )
-
-    listing_id = db.Column(
-        db.Integer,
-        db.ForeignKey("energy_listings.id"),
         nullable=False
     )
 
@@ -38,14 +23,9 @@ class Transaction(db.Model):
         nullable=False
     )
 
-    total_price = db.Column(
-        db.Float,
-        nullable=False
-    )
-
     status = db.Column(
         db.String(30),
-        default="pending"
+        default="available"
     )
 
     created_at = db.Column(
@@ -56,12 +36,9 @@ class Transaction(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "buyer_id": self.buyer_id,
             "seller_id": self.seller_id,
-            "listing_id": self.listing_id,
             "energy_amount": self.energy_amount,
             "price_per_kwh": self.price_per_kwh,
-            "total_price": self.total_price,
             "status": self.status,
             "created_at": self.created_at.isoformat()
             if self.created_at else None
