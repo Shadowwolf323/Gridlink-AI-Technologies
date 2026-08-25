@@ -1,20 +1,40 @@
-**/dgph
+# Flutter / Dart
+
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter_tool_state
+
+# Android
+
+.gradle/
+android/.gradle/
+android/app/debug/
+android/app/profile/
+android/app/release/
+android/local.properties
+
+# iOS / macOS
+
+**/Pods/
+**/.symlinks/
+**/DerivedData/
+**/xcuserdata/
 *.mode1v3
 *.mode2v3
 *.moved-aside
 *.pbxuser
 *.perspectivev3
 **/*sync/
-.sconsign.dblite
-.tags*
-**/.vagrant/
-**/DerivedData/
 Icon?
-**/Pods/
-**/.symlinks/
 profile
-xcuserdata
-**/.generated/
+
+# Flutter generated files
+
 Flutter/App.framework
 Flutter/Flutter.framework
 Flutter/Flutter.podspec
@@ -27,7 +47,67 @@ Flutter/flutter_export_environment.sh
 ServiceDefinitions.json
 Runner/GeneratedPluginRegistrant.*
 
-# Exceptions to above rules.
+# Python
+
+**pycache**/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+
+.venv/
+venv/
+env/
+
+# Environment variables / secrets
+
+.env
+.env.*
+!.env.example
+
+# Local databases
+
+*.db
+*.sqlite
+*.sqlite3
+
+# Python testing / tooling
+
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# IDE / editor files
+
+.vscode/
+.idea/
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# Build / temporary files
+
+*.log
+*.tmp
+*.temp
+
+# SCons
+
+.sconsign.dblite
+
+# Vagrant
+
+**/.vagrant/
+
+# Tags
+
+.tags*
+
+# Exceptions to default Xcode rules
+
 !default.mode1v3
 !default.mode2v3
 !default.pbxuser
